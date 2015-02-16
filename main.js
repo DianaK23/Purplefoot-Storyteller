@@ -6,8 +6,8 @@ var adverbs = [
 , "n alarmingly"
 , " small but"
 , "n unexpectedly"
-, "remarkably"
-, "staggeringly"
+, " remarkably"
+, " staggeringly"
 , " "
 ];
 
@@ -54,7 +54,7 @@ var verbclauses = [
   , "eat a magic lemon"
   , "smoke a tainted turkey"
   , "ferment the royal grapes"
-  ,"find the king's car keys"
+  , "find the king's car keys"
   , "deliver a secret valentine"
   , "find the lost parakeet of Prince Halpert"
   , "twist and shout"
