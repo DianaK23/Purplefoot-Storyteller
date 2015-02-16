@@ -18,7 +18,7 @@ var adjectives = [
   , "unremarkable"
   , "cunning"
   , "popular"
-  , "rambunctious"
+  , "rowdy"
   , "tiny"
   , "lovable"
   , "large"
