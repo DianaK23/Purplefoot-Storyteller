@@ -1,20 +1,35 @@
+var adverbs = [
+  " shockingly"
+, " reclusive but"
+, "n impossibly"
+, " sweet and"
+, "n alarmingly"
+, " small but"
+, "n unexpectedly"
+, "remarkably"
+, "staggeringly"
+, " "
+];
+
 var adjectives = [
-  "n ambitious"
-  , " shockingly beautiful"
-  , " brilliant"
-  , " reclusive but clever"
-  , "n unremarkable"
-  , " cunning"
-  , " bewitching"
-  , " rambunctious"
-  , "n impossibly small"
-  , " sweet and lovable"
-  , "n alarmingly large"
-  , " secretive"
-  , " small but powerful"
-  , " brave"
-  , "n unsuspecting"
-  , " mischievous"
+  "ambitious"
+  , "beautiful"
+  , "brilliant"
+  , "clever"
+  , "unremarkable"
+  , "cunning"
+  , "popular"
+  , "rambunctious"
+  , "tiny"
+  , "lovable"
+  , "large"
+  , "secretive"
+  , "powerful"
+  , "brave"
+  , "mischievous"
+  , "wicked"
+  , "ordinary"
+  , "average"
   ];
 var subjects = [
   "girl"
@@ -102,6 +117,7 @@ function setValue(elementId, choicesArray){
 }
 
 function roll(){
+  setValue("#adverb1", adverbs);
   setValue("#adjective1", adjectives);
   setValue("#subject1", subjects);
   setValue("#verbclause1", verbclauses);
