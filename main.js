@@ -8,7 +8,6 @@ var adverbs = [
 , "n unexpectedly"
 , " remarkably"
 , " staggeringly"
-, " "
 ];
 
 var adjectives = [
