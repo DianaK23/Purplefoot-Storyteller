@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 
-<html>
-<head>
-  <title>Little Purplefoot</title>
+<html lang="en">
 
-  <link rel="stylesheet" href="styles.css">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Little Purplefoot</title>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body onclick="roll()">
-  <p>The story is about a<span id="adverb1">__________</span> <span id="adjective1">__________</span> <span id="subject1">__________</span> who must <span id="verbclause1">__________</span> to <span id="verbphrase1">__________</span>.</p>
+<body>
 
-  <script src="main.js"></script>
+<button type="button" class="btn btn-lg btn-primary btn-story" onclick="roll()">Tell me a story</button>
+
+<p id="story1">The story is about a<span id="adverb1"></span>
+    <span id="adjective1"></span>
+    <span id="subject1"></span>
+    who must <span id="verbclause1"></span>
+    to <span id="verbphrase1"></span>.
+</p>
+
+
+
+<script src="main.js"></script>
 </body>
 </html>
