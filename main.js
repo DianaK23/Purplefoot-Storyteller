@@ -1,4 +1,38 @@
-var adverbs = [
+function Deck(initializingArray) {
+
+    this.orderedArray = initializingArray;
+
+    this.index = -1;
+
+    this.shuffle = function () {
+        for (var i = 0; i < this.orderedArray.length; i++) {
+            var a = 0;
+            var b = 0;
+            while (a == b) {
+                a = this.getRandomArbitrary(0, this.orderedArray.length);
+                b = this.getRandomArbitrary(0, this.orderedArray.length);
+            }
+            var c = this.orderedArray[a];
+            this.orderedArray[a] = this.orderedArray[b];
+            this.orderedArray[b] = c;
+        }
+    };
+
+    this.getRandomArbitrary = function (min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    };
+
+    this.nextChoice = function () {
+        this.index++;
+        if (this.index == this.orderedArray.length) {
+            this.index = 0;
+            this.shuffle();
+        }
+        return this.orderedArray[this.index];
+    }
+}
+
+var adverbDeck = new Deck([
     " shockingly"
     , " reclusive but"
     , "n impossibly"
@@ -8,9 +42,9 @@ var adverbs = [
     , "n unexpectedly"
     , " remarkably"
     , " staggeringly"
-];
+]);
 
-var adjectives = [
+var adjectiveDeck = new Deck([
     "ambitious"
     , "beautiful"
     , "brilliant"
@@ -29,8 +63,9 @@ var adjectives = [
     , "wicked"
     , "ordinary"
     , "average"
-];
-var subjects = [
+]);
+
+var subjectDeck = new Deck([
     "girl"
     , "dog"
     , "monster"
@@ -47,8 +82,9 @@ var subjects = [
     , "sorceress"
     , "Dragonrider"
     , "witch"
-];
-var verbclauses = [
+]);
+
+var verbClauseDeck = new Deck([
     "break a curse"
     , "eat a magic lemon"
     , "smoke a tainted turkey"
@@ -70,8 +106,9 @@ var verbclauses = [
     , "outsmart the ogres of Oolystria"
     , "repair a rift in the space-time continuum"
     , "prepare a secret potion"
-];
-var verbphrase = [
+]);
+
+var verbPhraseDeck = new Deck([
     "save the kingdom"
     , "prepare the sacrifice"
     , "guild the Lily of Langouardia"
@@ -101,25 +138,13 @@ var verbphrase = [
     , "unlock the Powers of Peltzan"
     , "live happily ever after"
     , "earn the respect and love of the curmudgeonly king"
-];
-
-function getRandomArbitrary(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
-}
-
-function nextChoice(choicesArray) {
-    return choicesArray[getRandomArbitrary(0, choicesArray.length)];
-}
-
-function setValue(elementId, choicesArray) {
-    $(elementId).text(nextChoice(choicesArray));
-}
+]);
 
 function roll() {
     $("#story1").css("visibility", "visible");
-    setValue("#adverb1", adverbs);
-    setValue("#adjective1", adjectives);
-    setValue("#subject1", subjects);
-    setValue("#verbclause1", verbclauses);
-    setValue("#verbphrase1", verbphrase);
+    $("#adverb1").text(adverbDeck.nextChoice());
+    $("#adjective1").text(adjectiveDeck.nextChoice());
+    $("#subject1").text(subjectDeck.nextChoice());
+    $("#verbclause1").text(verbClauseDeck.nextChoice());
+    $("#verbphrase1").text(verbPhraseDeck.nextChoice());
 }
