@@ -145,40 +145,58 @@
         , "earn the respect and love of the curmudgeonly king"
     ]);
 
-    $("#storyButton").click(function roll() {
+    function Story() {
+        this.hide = function () {
+            this.paragraph.css("display", "none");
+            this.paragraph.css("visibility", "hidden");
+        };
 
-        var story1 = $("#story1");
-        var story2 = $("#story2");
+        this.show = function () {
+            this.paragraph.css("display", "block");
+            this.paragraph.css("visibility", "visible");
+        };
+    }
+
+    var story1 = new Story();
+    story1.paragraph = $("#story1");
+    story1.adverb = $("#adverb1");
+    story1.adjective = $("#adjective1");
+    story1.subject = $("#subject1");
+    story1.verbClause = $("#verbclause1");
+    story1.verbPhrase = $("#verbphrase1");
+
+    var story2 = new Story();
+    story2.paragraph = $("#story2");
+    story2.adverb = $("#adverb2");
+    story2.adjective = $("#adjective2");
+    story2.subject = $("#subject2");
+    story2.verbClause = $("#verbclause2");
+    story2.verbPhrase = $("#verbphrase2");
+
+    var story = story1;
+
+    function selectStory() {
+        story.hide();
 
         if (0 == (new Date().getMilliseconds() % 2)) {
-
-            story1.css("display", "none");
-            story1.css("visibility", "hidden");
-
-            story2.css("display", "block");
-            story2.css("visibility", "visible");
-
-            $("#adverb2").text(adverbDeck.nextChoice());
-            $("#adjective2").text(adjectiveDeck.nextChoice());
-            $("#subject2").text(subjectDeck.nextChoice());
-            $("#verbclause2").text(verbClauseDeck.nextChoice());
-            $("#verbphrase2").text(verbPhraseDeck.nextChoice());
-
+            story = story2;
         } else {
-
-            story2.css("display", "none");
-            story2.css("visibility", "hidden");
-
-            story1.css("display", "block");
-            story1.css("visibility", "visible");
-
-            $("#adverb1").text(adverbDeck.nextChoice());
-            $("#adjective1").text(adjectiveDeck.nextChoice());
-            $("#subject1").text(subjectDeck.nextChoice());
-            $("#verbclause1").text(verbClauseDeck.nextChoice());
-            $("#verbphrase1").text(verbPhraseDeck.nextChoice());
+            story = story1;
         }
 
+        return story;
+    }
+
+    $("#storyButton").click(function roll() {
+
+        var selectedStory = selectStory();
+
+        selectedStory.show();
+        selectedStory.adverb.text(adverbDeck.nextChoice());
+        selectedStory.adjective.text(adjectiveDeck.nextChoice());
+        selectedStory.subject.text(subjectDeck.nextChoice());
+        selectedStory.verbClause.text(verbClauseDeck.nextChoice());
+        selectedStory.verbPhrase.text(verbPhraseDeck.nextChoice());
 
     });
 
