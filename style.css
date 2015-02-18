@@ -1,5 +1,14 @@
 #story1 {
     visibility: hidden;
+    display: none;
+    margin-left: 10%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+#story2 {
+    visibility: hidden;
+    display: none;
     margin-left: 10%;
     margin-right: 5%;
     margin-bottom: 5%;

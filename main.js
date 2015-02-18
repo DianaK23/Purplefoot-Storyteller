@@ -146,12 +146,40 @@
     ]);
 
     $("#storyButton").click(function roll() {
-        $("#story1").css("visibility", "visible");
-        $("#adverb1").text(adverbDeck.nextChoice());
-        $("#adjective1").text(adjectiveDeck.nextChoice());
-        $("#subject1").text(subjectDeck.nextChoice());
-        $("#verbclause1").text(verbClauseDeck.nextChoice());
-        $("#verbphrase1").text(verbPhraseDeck.nextChoice());
+
+        var story1 = $("#story1");
+        var story2 = $("#story2");
+
+        if (0 == (new Date().getMilliseconds() % 2)) {
+
+            story1.css("display", "none");
+            story1.css("visibility", "hidden");
+
+            story2.css("display", "block");
+            story2.css("visibility", "visible");
+
+            $("#adverb2").text(adverbDeck.nextChoice());
+            $("#adjective2").text(adjectiveDeck.nextChoice());
+            $("#subject2").text(subjectDeck.nextChoice());
+            $("#verbclause2").text(verbClauseDeck.nextChoice());
+            $("#verbphrase2").text(verbPhraseDeck.nextChoice());
+
+        } else {
+
+            story2.css("display", "none");
+            story2.css("visibility", "hidden");
+
+            story1.css("display", "block");
+            story1.css("visibility", "visible");
+
+            $("#adverb1").text(adverbDeck.nextChoice());
+            $("#adjective1").text(adjectiveDeck.nextChoice());
+            $("#subject1").text(subjectDeck.nextChoice());
+            $("#verbclause1").text(verbClauseDeck.nextChoice());
+            $("#verbphrase1").text(verbPhraseDeck.nextChoice());
+        }
+
+
     });
 
 })(this);
