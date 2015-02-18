@@ -1,10 +1,8 @@
-#adjective1, #subject1, #verbclause1, #verbphrase1 {
-  color: #8958AC;
-}
-
 #story1 {
     visibility: hidden;
     margin-left: 10%;
+    margin-right: 5%;
+    margin-bottom: 5%;
 }
 
 .btn-story {
