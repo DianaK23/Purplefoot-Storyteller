@@ -29,7 +29,9 @@ function Deck(initializingArray) {
             this.shuffle();
         }
         return this.orderedArray[this.index];
-    }
+    };
+
+    this.shuffle();
 }
 
 var adverbDeck = new Deck([
