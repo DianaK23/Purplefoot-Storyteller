@@ -145,59 +145,35 @@
         , "earn the respect and love of the curmudgeonly king"
     ]);
 
-    function Story() {
-        this.hide = function () {
-            this.paragraph.css("display", "none");
-            this.paragraph.css("visibility", "hidden");
-        };
-
-        this.show = function () {
-            this.paragraph.css("display", "block");
-            this.paragraph.css("visibility", "visible");
-        };
-    }
-
-    var story1 = new Story();
-    story1.paragraph = $("#story1");
-    story1.adverb = $("#adverb1");
-    story1.adjective = $("#adjective1");
-    story1.subject = $("#subject1");
-    story1.verbClause = $("#verbclause1");
-    story1.verbPhrase = $("#verbphrase1");
-
-    var story2 = new Story();
-    story2.paragraph = $("#story2");
-    story2.adverb = $("#adverb2");
-    story2.adjective = $("#adjective2");
-    story2.subject = $("#subject2");
-    story2.verbClause = $("#verbclause2");
-    story2.verbPhrase = $("#verbphrase2");
-
-    var story = story1;
 
     function selectStory() {
-        story.hide();
+
+        var storyTarget = $("#storyTarget");
+        storyTarget.empty();
+
 
         if (0 == (new Date().getMilliseconds() % 2)) {
-            story = story2;
+            storyTarget.append($("#templates").find("p.story2").clone());
         } else {
-            story = story1;
+            storyTarget.append($("#templates").find("p.story1").clone());
         }
-
-        return story;
     }
 
     $("#storyButton").click(function roll() {
 
-        var selectedStory = selectStory();
+        selectStory();
 
-        selectedStory.show();
-        selectedStory.adverb.text(adverbDeck.nextChoice());
-        selectedStory.adjective.text(adjectiveDeck.nextChoice());
-        selectedStory.subject.text(subjectDeck.nextChoice());
-        selectedStory.verbClause.text(verbClauseDeck.nextChoice());
-        selectedStory.verbPhrase.text(verbPhraseDeck.nextChoice());
+        var story = $("#storyTarget");
+
+        story.find("p").css("display", "block");
+        story.find("span.adverb").text(adverbDeck.nextChoice());
+        story.find("span.adjective").text(adjectiveDeck.nextChoice());
+        story.find("span.subject").text(subjectDeck.nextChoice());
+        story.find("span.verbclause").text(verbClauseDeck.nextChoice());
+        story.find("span.verbphrase").text(verbPhraseDeck.nextChoice());
 
     });
+
+    init();
 
 })(this);

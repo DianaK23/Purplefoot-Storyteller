@@ -27,22 +27,30 @@
 
 <body>
 
+
+<div id="storyTarget"></div>
+
+<canvas id="smokeCanvas"></canvas>
+
 <button id="storyButton" type="button" class="btn btn-lg btn-primary">Tell me a story</button>
 
-<p id="story1">The story is about a<span id="adverb1"></span>
-    <span id="adjective1"></span>
-    <span id="subject1"></span>
-    who must <span id="verbclause1"></span>
-    to <span id="verbphrase1"></span>.
+<div id="templates">
+    <p class="story1">The story is about a<span class="adverb"></span>
+        <span class="adjective"></span>
+        <span class="subject"></span>
+        who must <span class="verbclause"></span>
+        to <span class="verbphrase"></span>.
 </p>
 
-<p id="story2">This tale begins with a<span id="adverb2"></span>
-    <span id="adjective2"></span>
-    <span id="subject2"></span>
-    who, in order to <span id="verbphrase2"></span>,
-    must <span id="verbclause2"></span>.
+    <p class="story2">This tale begins with a<span class="adverb"></span>
+        <span class="adjective"></span>
+        <span class="subject"></span>
+        who, in order to <span class="verbphrase"></span>,
+        must <span class="verbclause"></span>.
 </p>
+</div>
 
+<script src="smoke.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

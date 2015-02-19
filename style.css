@@ -1,19 +1,75 @@
-#story1 {
-    visibility: hidden;
-    display: none;
-    margin-left: 10%;
-    margin-right: 5%;
-    margin-bottom: 5%;
+body {
+    background-color: black;
 }
 
-#story2 {
-    visibility: hidden;
+.story1 {
+    color: white;
     display: none;
     margin-left: 10%;
     margin-right: 5%;
     margin-bottom: 5%;
+    -webkit-animation-name: fadein;
+    -webkit-animation-duration: 5s;
+    animation-name: foo;
+    animation-duration: 5s;
+}
+
+.story2 {
+    color: white;
+    display: none;
+    margin-left: 10%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    -webkit-animation-name: fadein;
+    -webkit-animation-duration: 5s;
+    animation-name: foo;
+    animation-duration: 5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes foo {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 #storyButton {
-    margin: 5%;
+    position: absolute;
+    top: 260px;
+    left: 10px;
+}
+
+#smokeCanvas {
+    /*background: black;*/
+
+    position: absolute;
+    z-index: 0;
+    top: 10px;
+    left: 10px;
+    width: 340px;
+    height: 240px;
+}
+
+#storyTarget {
+    /*background: black;*/
+
+    text-align: center;
+    text-shadow: black 0 -2px;
+    width: 320px;
+    height: 240px;
+    position: absolute;
+    z-index: 1;
+    top: 40px;
+    left: 10px;
 }
